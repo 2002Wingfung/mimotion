@@ -133,8 +133,10 @@ class MiMotion():
         hour = get_beijing_time().hour
         min_ratio = max(math.ceil((hour / 3) - 1), 0)
         max_ratio = math.ceil(hour / 3)
-        min_step = int(3500 * min_ratio * self.factor)
-        max_step = int(3500 * max_ratio * self.factor)
+        # min_step = int(3500 * min_ratio * self.factor)
+        # max_step = int(3500 * max_ratio * self.factor)
+        min_step = 7000
+        max_step = 7800
         return min_step, max_step
 
     def run(self):
@@ -145,7 +147,7 @@ class MiMotion():
                 min_step, max_step = max_step, min_step
         except Exception as e:
             print(f'步数范围初始化失败: {e}，使用默认值')
-            min_step, max_step = 10000, 19999
+            min_step, max_step = 7000, 7800
 
         step = str(random.randint(min_step, max_step))
 
