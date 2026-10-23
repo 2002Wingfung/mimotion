@@ -135,7 +135,7 @@ class MiMotion():
         max_ratio = math.ceil(hour / 3)
         min_step = int(3500 * min_ratio * self.factor)
         max_step = int(3500 * max_ratio * self.factor)
-        return min_step, max_step
+        return 6667, 7266
 
     def run(self):
         # ---------- 1. 计算步数范围 ----------
